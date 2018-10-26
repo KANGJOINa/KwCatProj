@@ -14,7 +14,26 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
+import android.os.AsyncTask;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+
 public class TempActivity extends AppCompatActivity {
+
+    //////////////////////////////////////////////
+    private final String sampleURL = "http://openapi.seoul.go.kr:8088/6c556b764f6b6a6d35334d76584a63/xml/ForecastWarningUltrafineParticleOfDustService/1/5/";
+    parsingTask mParsingTask = null;
+    public TempActivity() throws ParserConfigurationException, IOException, SAXException {
+    }
 
     private ProgressBar tempprogress;
     static ProgressBar tempcloth;
@@ -35,11 +54,60 @@ public class TempActivity extends AppCompatActivity {
 
 
 
+    private class parsingTask
+            extends AsyncTask<String, String, Boolean>{
+        @Override
+        protected void onPreExecute(){
+
+        }
+
+        @Override
+        protected Boolean doInBackground(String... url) {
+
+            String APPLC_DT= null;
+            String FA_ON = null;
+            String POLLUTANT = null;
+            String CAISTEP = null;
+            String ALARM_CNDT = null;
+
+            try {
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(sampleURL);
+
+                Element root = doc.getDocumentElement();
+                APPLC_DT = root.getElementsByTagName("APPLC_DT").item(0).getTextContent();
+                FA_ON = root.getElementsByTagName("FA_ON").item(0).getTextContent();
+                POLLUTANT= root.getElementsByTagName("POLLUTANT").item(0).getTextContent();
+                CAISTEP= root.getElementsByTagName("CAISTEP").item(0).getTextContent();
+                ALARM_CNDT= root.getElementsByTagName("ALARM_CNDT").item(0).getTextContent();
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            publishProgress(APPLC_DT, FA_ON,POLLUTANT, CAISTEP, ALARM_CNDT);
+
+            return true;
+        }
+        @Override
+        protected void onProgressUpdate(String... url){
+            temp.setText(temp.getText().toString()+ url[0]+" °C");
+
+        }
+    }
+
+
+    //////////////////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
+
+
 
         tempprogress = (ProgressBar)findViewById(R.id.progressTemp);
         tempcloth = (ProgressBar)findViewById(R.id.progressCloth);
@@ -54,7 +122,7 @@ public class TempActivity extends AppCompatActivity {
         temporature =0;
 
 
-        temp.setText(temp.getText().toString() + " "+ temporature+ " °C");
+        temp.setText(temp.getText().toString() + " " );
 
 
 
@@ -108,6 +176,10 @@ public class TempActivity extends AppCompatActivity {
             }
         }).start();
 
+        ///
+        mParsingTask = new parsingTask();
+        mParsingTask.execute(sampleURL);
+        ///
     }
 
     public void ClickReset(View view){
