@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KWproject</string>
+    <string name="temp">현재 온도 :</string>
+    <string name="realtemp">체감 온도 : - 10 °C</string>
+</resources>
