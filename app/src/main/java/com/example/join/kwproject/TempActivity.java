@@ -134,7 +134,7 @@ public class TempActivity extends AppCompatActivity {
 
         final ArrayList<RecycleInfo> foodInfoArrayList = new ArrayList<>();
         foodInfoArrayList.add(new RecycleInfo(R.drawable.coata, "10"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.hat, "2"));
+        foodInfoArrayList.add(new RecycleInfo(R.drawable.acc, "2"));
         foodInfoArrayList.add(new RecycleInfo(R.drawable.hat, "5"));
         foodInfoArrayList.add(new RecycleInfo(R.drawable.pant, "10"));
         foodInfoArrayList.add(new RecycleInfo(R.drawable.shoose, "2"));

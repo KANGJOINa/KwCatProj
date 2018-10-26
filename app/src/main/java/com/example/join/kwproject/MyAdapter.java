@@ -102,20 +102,38 @@ public abstract class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             @Override
             public void onClick(View v) {
 
-                if(TempActivity.check[position]==false) {
-                    TempActivity.temporature += Integer.parseInt(foodInfoArrayList.get(position).price.toString());
-                    TempActivity.tempcloth.setProgress(TempActivity.temporature);
-                    Log.d("test", "" + position + "  " + TempActivity.temporature);
-                    TempActivity.top.setImageResource(foodInfoArrayList.get(position).drawableId);
-                    TempActivity.check[position]=true;
+                if(position<3) {
+                    if (TempActivity.check[position] == false) {
+                        TempActivity.temporature += Integer.parseInt(foodInfoArrayList.get(position).price.toString());
+                        TempActivity.tempcloth.setProgress(TempActivity.temporature);
+                        Log.d("test", "" + position + "  " + TempActivity.temporature);
+                        TempActivity.top.setImageResource(foodInfoArrayList.get(position).drawableId);
+                        TempActivity.check[position] = true;
 
-                } else{
-                    TempActivity.temporature -= Integer.parseInt(foodInfoArrayList.get(position).price.toString());
-                    TempActivity.tempcloth.setProgress(TempActivity.temporature);
-                    Log.d("test", "" + position + "  " + TempActivity.temporature);
-                    TempActivity.top.setImageResource(R.drawable.model);
-                    TempActivity.check[position]=false;
+                    } else {
+                        TempActivity.temporature -= Integer.parseInt(foodInfoArrayList.get(position).price.toString());
+                        TempActivity.tempcloth.setProgress(TempActivity.temporature);
+                        Log.d("test", "" + position + "  " + TempActivity.temporature);
+                        TempActivity.top.setImageResource(R.drawable.model);
+                        TempActivity.check[position] = false;
 
+                    }
+                } else {
+                    if (TempActivity.check[position] == false) {
+                        TempActivity.temporature += Integer.parseInt(foodInfoArrayList.get(position).price.toString());
+                        TempActivity.tempcloth.setProgress(TempActivity.temporature);
+                        Log.d("test", "" + position + "  " + TempActivity.temporature);
+                        TempActivity.pant.setImageResource(foodInfoArrayList.get(position).drawableId);
+                        TempActivity.check[position] = true;
+
+                    } else {
+                        TempActivity.temporature -= Integer.parseInt(foodInfoArrayList.get(position).price.toString());
+                        TempActivity.tempcloth.setProgress(TempActivity.temporature);
+                        Log.d("test", "" + position + "  " + TempActivity.temporature);
+                        TempActivity.pant.setImageResource(R.drawable.model);
+                        TempActivity.check[position] = false;
+
+                    }
                 }
 
             }
