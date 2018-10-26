@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Clicknextpage(View view){
-        Intent intent = new Intent(this,SecondActivity.class);
+        Intent intent = new Intent(this,ArrayActivity.class);
         startActivity(intent);
      /*   Intent intent = new Intent(ctx, PopupActivity.class);
 

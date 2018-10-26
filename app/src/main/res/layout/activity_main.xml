@@ -10,10 +10,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="254dp"
+        android:layout_height="133dp"
         android:onClick="Clicknextpage"
         android:text="1111"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="276dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="303dp" />
 </android.support.constraint.ConstraintLayout>

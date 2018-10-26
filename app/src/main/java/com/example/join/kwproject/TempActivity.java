@@ -117,6 +117,11 @@ public class TempActivity extends AppCompatActivity {
     }
 
     public void Clickbackpage(View view){
+        Intent intent = new Intent(this,ArrayActivity.class);
+        startActivity(intent);
+
+    }
+    public void ClickCloset(View view){
         Intent intent = new Intent(this,SecondActivity.class);
         startActivity(intent);
 
