@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
      /*   Intent intent = new Intent(ctx, PopupActivity.class);
 
-        startActivity(intent);//실행
+        startActivity(intent);//
 */
 
 
