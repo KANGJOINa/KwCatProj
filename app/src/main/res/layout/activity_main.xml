@@ -11,10 +11,46 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="254dp"
-        android:layout_height="133dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="36dp"
         android:onClick="Clicknextpage"
-        android:text="1111"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="303dp" />
+        android:text="ENTER"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordtxt"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/idtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="500dp"
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/passwordtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="PASSWORD :"
+        android:inputType="textShortMessage|textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idtxt" />
+
+    <TextView
+        android:id="@+id/notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="--"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 </android.support.constraint.ConstraintLayout>

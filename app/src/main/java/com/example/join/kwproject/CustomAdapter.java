@@ -3,6 +3,7 @@ package com.example.join.kwproject;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
@@ -36,6 +37,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         protected TextView mEnglish;
         protected TextView mKorean;
+
+
+
 
 
         public CustomViewHolder(View view) {
@@ -142,6 +146,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
+
+
 
         viewholder.mId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
         viewholder.mEnglish.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);

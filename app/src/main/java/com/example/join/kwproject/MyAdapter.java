@@ -106,14 +106,14 @@ public abstract class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     TempActivity.temporature += Integer.parseInt(foodInfoArrayList.get(position).price.toString());
                     TempActivity.tempcloth.setProgress(TempActivity.temporature);
                     Log.d("test", "" + position + "  " + TempActivity.temporature);
-                    TempActivity.mainimage.setImageResource(foodInfoArrayList.get(position).drawableId);
+                    TempActivity.top.setImageResource(foodInfoArrayList.get(position).drawableId);
                     TempActivity.check[position]=true;
 
                 } else{
                     TempActivity.temporature -= Integer.parseInt(foodInfoArrayList.get(position).price.toString());
                     TempActivity.tempcloth.setProgress(TempActivity.temporature);
                     Log.d("test", "" + position + "  " + TempActivity.temporature);
-                    TempActivity.mainimage.setImageResource(R.drawable.model);
+                    TempActivity.top.setImageResource(R.drawable.model);
                     TempActivity.check[position]=false;
 
                 }

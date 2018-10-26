@@ -22,6 +22,7 @@ public class TempActivity extends AppCompatActivity {
     private TextView temp,realtemp;
 
     static ImageView mainimage;
+    static ImageView pant,top;
 
     static int temporature;
 
@@ -44,7 +45,10 @@ public class TempActivity extends AppCompatActivity {
         tempcloth = (ProgressBar)findViewById(R.id.progressCloth);
         temp = (TextView)findViewById(R.id.Temp);
         realtemp =(TextView)findViewById(R.id.RealTemp);
+
         mainimage = (ImageView)findViewById(R.id.imagemain);
+        pant = (ImageView)findViewById(R.id.imagepant);
+        top =(ImageView)findViewById(R.id.imagetop);
 
         mainimage.setImageResource(R.drawable.model);
         temporature =0;
@@ -61,8 +65,8 @@ public class TempActivity extends AppCompatActivity {
 
 
         final ArrayList<RecycleInfo> foodInfoArrayList = new ArrayList<>();
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.pant, "10"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.shoose, "2"));
+        foodInfoArrayList.add(new RecycleInfo(R.drawable.coata, "10"));
+        foodInfoArrayList.add(new RecycleInfo(R.drawable.hat, "2"));
         foodInfoArrayList.add(new RecycleInfo(R.drawable.hat, "5"));
         foodInfoArrayList.add(new RecycleInfo(R.drawable.pant, "10"));
         foodInfoArrayList.add(new RecycleInfo(R.drawable.shoose, "2"));
@@ -109,7 +113,7 @@ public class TempActivity extends AppCompatActivity {
     public void ClickReset(View view){
        temporature = 5;
        tempcloth.setProgress(temporature);
-        TempActivity.mainimage.setImageResource(R.drawable.maneq);
+        TempActivity.mainimage.setImageResource(R.drawable.model);
 
        for(int i=0;i<6;i++){
            check[i]=false;
