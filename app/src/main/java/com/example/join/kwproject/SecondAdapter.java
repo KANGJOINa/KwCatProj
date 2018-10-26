@@ -29,7 +29,7 @@ public abstract class SecondAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     private OnItemClickListener onItemClickListener;
 
-    private ImageButton Pic1,Pic2;
+    private ImageButton     Pic1,Pic2;
     private TextView textsec;
 
 

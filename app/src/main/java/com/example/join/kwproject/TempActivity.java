@@ -133,12 +133,12 @@ public class TempActivity extends AppCompatActivity {
 
 
         final ArrayList<RecycleInfo> foodInfoArrayList = new ArrayList<>();
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.coata, "10"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.acc, "2"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.hat, "5"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.pant, "10"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.shoose, "2"));
-        foodInfoArrayList.add(new RecycleInfo(R.drawable.hat, "5"));
+        foodInfoArrayList.add(0,new RecycleInfo(R.drawable.pants, "10"));
+        foodInfoArrayList.add(1,new RecycleInfo(R.drawable.hat, "2"));
+        foodInfoArrayList.add(2,new RecycleInfo(R.drawable.hat, "5"));
+        foodInfoArrayList.add(3,new RecycleInfo(R.drawable.pant, "10"));
+        foodInfoArrayList.add(4,new RecycleInfo(R.drawable.shoose, "2"));
+        foodInfoArrayList.add(5,new RecycleInfo(R.drawable.hat, "5"));
 
         MyAdapter myAdapter = new MyAdapter(foodInfoArrayList) {
             @Override

@@ -39,12 +39,12 @@ public class SecondActivity extends AppCompatActivity {
 
         final ArrayList<RecycleInfoSecond> foodInfoArrayList2 = new ArrayList<>();
 
-        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.pant,"123"));
-        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.shoose, "234"));
-        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.hat, "3"));
-        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.pant, "12443"));
-        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.shoose,"1523"));
-        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.hat, "12223"));
+        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.pant,"신축성 있는 청바지\n15"));
+        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.shoose, "가죽 신발\n7"));
+        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.hat, "귀여운 모자 \n2"));
+        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.pant, "두꺼운 청바지 \n20"));
+        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.shoose,"그냥 신발\n5"));
+        foodInfoArrayList2.add(new RecycleInfoSecond(R.drawable.acc, "따뜻한 목도리\n10"));
 
         SecondAdapter secondAdapter = new SecondAdapter(foodInfoArrayList2) {
             @Override
